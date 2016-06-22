@@ -1,5 +1,5 @@
 group 'com.sysalli.integration'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -24,5 +24,10 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-jetty")
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+configurations {
+    compile.exclude module: 'spring-boot-starter-tomcat'
 }
